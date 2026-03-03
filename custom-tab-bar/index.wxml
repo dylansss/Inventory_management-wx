@@ -1,0 +1,4 @@
+<t-tab-bar value="{{ value }}" theme="tag" split="{{ false }}" bind:change="handleChange">
+  <t-tab-bar-item icon="layers" value="stock">库存</t-tab-bar-item>
+  <t-tab-bar-item icon="chart-bar" value="chart">视图</t-tab-bar-item>
+</t-tab-bar>

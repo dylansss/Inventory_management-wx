@@ -1,0 +1,29 @@
+<view class="stock-page">
+  <view class="search-bar">
+    <t-search 
+      value="{{keyword}}" 
+      placeholder="按名称搜索" 
+      bind:change="onKeywordInput"
+      bind:submit="onSearch"
+      bind:action-click="onSearch"
+      action="搜索"
+    />
+  </view>
+
+  <view class="stock-list">
+    <t-cell-group wx:if="{{list.length > 0}}">
+      <t-cell 
+        wx:for="{{list}}" 
+        wx:key="sku_id"
+        title="{{item.name}}"
+        note="库存: {{item.quantity}}"
+        hover
+        arrow
+        bind:click="onOperation"
+        data-item="{{item}}"
+      />
+    </t-cell-group>
+    
+    <t-empty wx:else description="暂无库存数据" />
+  </view>
+</view>

@@ -1,0 +1,29 @@
+<view class="page login">
+  <view class="login__title">福庆库存管理系统</view>
+  <view class="login__content">
+    <view class="login__input">
+      <t-input
+        label="用户名"
+        placeholder="请输入用户名"
+        value="{{username}}"
+        bindchange="onUsernameChange"
+      />
+      <t-input
+        label="密码"
+        placeholder="请输入密码"
+        type="password"
+        clearable
+        value="{{password}}"
+        bindchange="onPasswordChange"
+      />
+    </view>
+
+    <view class="login__tips">登录后将自动绑定微信账号</view>
+
+    <view class="login__button">
+      <t-button theme="primary" size="large" block disabled="{{!isSubmit}}" bindtap="login">
+        登录
+      </t-button>
+    </view>
+  </view>
+</view>

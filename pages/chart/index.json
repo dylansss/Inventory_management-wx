@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "库存视图",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "t-empty": "tdesign-miniprogram/empty/empty"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "库存管理",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "t-search": "tdesign-miniprogram/search/search",
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "t-cell-group": "tdesign-miniprogram/cell-group/cell-group",
+    "t-empty": "tdesign-miniprogram/empty/empty",
+    "t-icon": "tdesign-miniprogram/icon/icon"
+  }
+}

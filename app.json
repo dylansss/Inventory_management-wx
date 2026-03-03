@@ -1,0 +1,42 @@
+{
+  "pages": ["pages/stock/index", "pages/chart/index"],
+  "usingComponents": {
+    "t-toast": "tdesign-miniprogram/toast/toast"
+  },
+  "subpackages": [
+    {
+      "root": "pages/stock-operation",
+      "name": "stock-operation",
+      "pages": ["index"]
+    },
+    {
+      "root": "pages/login",
+      "name": "login",
+      "pages": ["login"]
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/stock/index",
+        "text": "库存"
+      },
+      {
+        "pagePath": "pages/chart/index",
+        "text": "视图"
+      }
+    ]
+  },
+  "resolveAlias": {
+    "~/*": "/*"
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

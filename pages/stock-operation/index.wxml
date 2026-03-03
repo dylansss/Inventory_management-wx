@@ -1,0 +1,63 @@
+<view class="operation-page">
+  <view class="form-section">
+    <view class="form-item">
+      <view class="form-label">商品名称</view>
+      <view class="form-value">{{skuInfo ? skuInfo.name : '未选择'}}</view>
+    </view>
+    
+    <view class="form-item">
+      <view class="form-label">当前库存</view>
+      <view class="form-value">{{skuInfo ? skuInfo.quantity : 0}}</view>
+    </view>
+    
+    <view class="form-item">
+      <view class="form-label">操作类型</view>
+      <view class="form-value">
+        <radio-group bind:change="onTypeChange" class="radio-group">
+          <label class="radio-label">
+            <radio value="IN" checked="{{type === 'IN'}}" color="#0052d9" />
+            <text>入库</text>
+          </label>
+          <label class="radio-label">
+            <radio value="OUT" checked="{{type === 'OUT'}}" color="#0052d9" />
+            <text>出库</text>
+          </label>
+        </radio-group>
+      </view>
+    </view>
+    
+    <view class="form-item">
+      <view class="form-label">数量</view>
+      <view class="form-value">
+        <view class="stepper">
+          <button class="stepper-btn" bind:tap="decreaseQuantity">-</button>
+          <input 
+            type="number" 
+            value="{{quantity}}" 
+            bind:input="onQuantityInput"
+            class="stepper-input"
+          />
+          <button class="stepper-btn" bind:tap="increaseQuantity">+</button>
+        </view>
+      </view>
+    </view>
+    
+    <view class="form-item form-item-column">
+      <view class="form-label">备注</view>
+      <textarea 
+        value="{{remark}}" 
+        placeholder="请输入备注" 
+        bind:input="onRemarkInput"
+        maxlength="200"
+        class="textarea"
+        auto-height
+      />
+    </view>
+  </view>
+
+  <view class="button-group">
+    <button type="primary" bind:tap="onSubmit" class="submit-btn">
+      确认{{type === 'IN' ? '入库' : '出库'}}
+    </button>
+  </view>
+</view>

@@ -1,0 +1,23 @@
+<view class="chart-page">
+  <view class="chart-container">
+    <scroll-view scroll-y class="chart-scroll">
+      <view class="chart-title">库存统计</view>
+      
+      <view wx:if="{{chartData.length > 0}}" class="chart-content">
+        <view wx:for="{{chartData}}" wx:key="sku_id" class="chart-item">
+          <view class="item-label">{{item.name}}</view>
+          <view class="item-bar-container">
+            <view 
+              class="item-bar" 
+              style="width: {{item.percentage}}%; background-color: {{item.color}};"
+            >
+              <text class="bar-text">{{item.quantity}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      
+      <t-empty wx:else description="暂无数据" />
+    </scroll-view>
+  </view>
+</view>
