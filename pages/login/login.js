@@ -51,7 +51,12 @@ Page({
       if (loginRes.data && loginRes.data.token) {
         // 保存token
         wx.setStorageSync('access_token', loginRes.data.token);
-
+        setTimeout(() => {
+          wx.switchTab({
+            url: '/pages/stock/index',
+          });
+        }, 1500);
+        return
         // 2. 获取微信授权
         wx.getUserProfile({
           desc: '用于绑定微信账号',
@@ -73,11 +78,7 @@ Page({
                       icon: 'success',
                     });
 
-                    setTimeout(() => {
-                      wx.switchTab({
-                        url: '/pages/stock/index',
-                      });
-                    }, 1500);
+
                   } catch (error) {
                     console.error('绑定微信失败:', error);
                     // 即使绑定失败也允许登录
