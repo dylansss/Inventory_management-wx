@@ -15,6 +15,7 @@ Page({
       const skuInfo = {
         sku_id: parseInt(options.sku_id),
         name: decodeURIComponent(options.name),
+        material: decodeURIComponent(options.material),
         quantity: parseInt(options.quantity || 0),
       };
       

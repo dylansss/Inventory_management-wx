@@ -15,7 +15,7 @@
       <t-cell 
         wx:for="{{list}}" 
         wx:key="sku_id"
-        title="{{item.name}}"
+        title="{{item.name}}（{{item.material}}）"
         note="库存: {{item.quantity}}"
         hover
         arrow

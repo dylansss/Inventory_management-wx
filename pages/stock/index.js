@@ -52,7 +52,7 @@ Page({
       const res = await request('/stock', 'GET', {
         keyword: this.data.keyword,
         page: this.data.page,
-        pageSize: this.data.pageSize,
+        pageSize: 1000,
       });
       if (res.data) {
         this.setData({
@@ -84,7 +84,7 @@ Page({
     }
     
     wx.navigateTo({
-      url: `/pages/stock-operation/index?sku_id=${item.sku_id}&name=${encodeURIComponent(item.name)}&quantity=${item.quantity}`,
+      url: `/pages/stock-operation/index?sku_id=${item.sku_id}&name=${encodeURIComponent(item.name)}&quantity=${item.quantity}&material=${encodeURIComponent(item.material)}`,
     });
   },
 
